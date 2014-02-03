@@ -28,61 +28,7 @@
 	  
 	}
 
-  },
-
-  "Mappings" : {
-    "RegionMap" : {
-	  "us-east-1" : {"AMI" : "ami-fbad8292"}
-    }
-  },
-
-  "Resources" : {
-    "webserverinstance" : {
-      "Type" : "AWS::EC2::Instance",
-      "Properties" : {
-		"AvailabilityZone" : { "Ref" : "AvailabilityZone" },
-        "KeyName" : { "Ref" : "KeyName" },
-        "SecurityGroupIds" : [{ "Ref" : "InstanceSecurityGroup" }],
-        "ImageId" : { "Fn::FindInMap" : [ "RegionMap", { "Ref" : "AWS::Region" }, "AMI" ]},
-		"SubnetId" : { "Ref" : "Subnets" },
-        "InstanceType" : "t1.micro",
-        "Tags" : [
-		  { "Key" : "Name", 
-		    "Value" : "WebSvr-v1" 
-		  },
-		  { "Key" : "Role",
-		     "Value" : "Role name"
-		  },
-		   { "Key" : "App CI",
-		     "Value" : "App name"
-		  },
-		   { "Key" : "Env",
-		     "Value" : "Env name"
-		  },
-		   { "Key" : "P&L",
-		     "Value" : " P& L Name"
-		  },
-		  { "Key" : "Buc-adn",
-		     "Value" : "Buc-adn Name"
-		  }
-		  ],
-        "UserData" : { "Fn::Base64" : { "Fn::Join" : ["",[
-            "#!/bin/bash","\n",
-			
-			
-			"\n" ]]}}
-      }
-    }
-
-  },
-
-  "Outputs" : {
-    "webserverinstance" : {
-	  "Description" : "To automation script",
-      "Value" : { "Fn::Join" : [ "", ["export webserverinstance=", { "Fn::GetAtt" : [ "webserverinstance", "PublicDnsName" ] } ]] }
-    }
-
-  } 
+  }
 
 }
 
