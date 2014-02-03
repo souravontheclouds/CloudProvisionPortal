@@ -1,34 +1,20 @@
-{
- "AWSTemplateFormatVersion" : "2010-09-09",
- "Parameters" : {
-     "AvailabilityZone" : {
-      "Description" : "Name of an availability zone to create instance",
-      "Default" : "us-east-1a",
-      "Type" : "String"
-    },
-    "KeyName" : {
-      "Description" : "Name of an existing EC2 KeyPair to enable SSH access to the instance",
-      "Default" : "VPC_Sathish",
-      "Type" : "String"
-    },
-    "InstanceSecurityGroup" : {
-      "Description" : "Name of an existing security group",
-      "Default" : "sg-2035d445",
-      "Type" : "String"
-    },
-	"VpcId" : {
-       "Description" : "VpcId of your existing Virtual Private Cloud (VPC)",
-	   "Default" : "vpc-30150952",
-	   "Type" : "String"
-    },
-    "Subnets" : {
-      "Description" : "The list of SubnetIds, for at least two Availability Zones in the region in your Virtual Private Cloud (VPC)",
-	  "Default" : "subnet-380e374c",
-	  "Type" : "String"
-	  
-	}
-
-  }
-
-}
-
+[
+		  { "Key" : "Name", 
+		    "Value" : "WebSvr-v1" 
+		  },
+		  { "Key" : "Role",
+		     "Value" : "Role name"
+		  },
+		   { "Key" : "App CI",
+		     "Value" : "App name"
+		  },
+		   { "Key" : "Env",
+		     "Value" : "Env name"
+		  },
+		   { "Key" : "P&L",
+		     "Value" : " P& L Name"
+		  },
+		  { "Key" : "Buc-adn",
+		     "Value" : "Buc-adn Name"
+		  }
+]
